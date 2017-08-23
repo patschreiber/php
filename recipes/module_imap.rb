@@ -1,10 +1,7 @@
 #
-# Author::  Joshua Timberman (<joshua@chef.io>)
-# Author::  Seth Chisamore (<schisamo@chef.io>)
+# Author:: Artur Melo (<artur.melo@beubi.com>)
 # Cookbook:: php
-# Recipe:: module_ldap
-#
-# Copyright:: 2009-2017, Chef Software, Inc.
+# Recipe:: module_imap
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -21,9 +18,9 @@
 
 pkg = value_for_platform(
   %w(centos redhat scientific fedora amazon oracle) => {
-    'default' => 'php-ldap',
+    'default' => 'php-imap',
   },
-  'default' => node['php']['ldap']['package']
+  'default' => 'php5-imap'
 )
 
 package pkg do
